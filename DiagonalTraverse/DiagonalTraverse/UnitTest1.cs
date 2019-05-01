@@ -23,7 +23,7 @@ namespace DiagonalTraverse
         public int[] FindDiagonalOrder(int[][] matrix)
         {
 
-            if (matrix.Length == 0) return new int[0];
+            if (matrix.Length == 0) return new int[]{};
 
             var matrixLenght = matrix.Length * matrix[0].Length;
             var res = new List<int>(){matrix[0][0]};
