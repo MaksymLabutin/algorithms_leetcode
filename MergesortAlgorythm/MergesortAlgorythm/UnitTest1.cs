@@ -36,7 +36,7 @@ namespace Tests
             var arr2Length = arr2.Length;
             var arr1Length = arr1.Length;
 
-            if (arr1Length > 1)
+            if (arr2Length > 1)
             {
                 arr1 = Mergesort(arr1.Take(arr1Length / 2).ToArray(), arr1.Skip(arr1Length / 2).ToArray());
                 arr2 = Mergesort(arr2.Take(arr2Length / 2).ToArray(), arr2.Skip(arr2Length / 2).ToArray());
