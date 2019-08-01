@@ -51,12 +51,16 @@ namespace Tests
         }
 
         public int FindMin(int[] nums)
-        {  
+        {
+            if (nums.Length < 2) return nums.Length < 1 ? 0 : nums[0];
+
             int left = 0, right = nums.Length;
 
             while (left < right)
             {
-                var mid = left + (right - left) / 2; 
+                var mid = left + (right - left) / 2;
+
+                if (nums[mid] < nums[mid - 1]) return nums[mid];
                 if (nums[mid] > nums[mid - 1] && nums[mid] > nums[0])
                 {
                     left = mid + 1;
@@ -66,8 +70,8 @@ namespace Tests
                     right = mid;
                 }
             }
-            
-            return nums[left];
+
+            return left == nums.Length - 1 ? nums[left] : nums[0];
         }
     }
 }
