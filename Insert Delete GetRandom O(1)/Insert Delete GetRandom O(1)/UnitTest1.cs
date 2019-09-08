@@ -21,7 +21,7 @@ namespace Tests
 
             // Inserts 1 to the set. Returns true as 1 was inserted successfully.
             var a = randomSet.Insert(1);
-            randomSet.Insert(10); randomSet.Insert(20); 
+            randomSet.Insert(10); randomSet.Insert(20);
 
 
             Assert.IsTrue(a);
@@ -59,12 +59,17 @@ namespace Tests
 
     public class RandomizedSet
     {
-        private readonly List<int> _map;
+        private List<int> _toShow;
+        private readonly HashSet<int> _map;
+
+        private Random r;
 
         /** Initialize your data structure here. */
         public RandomizedSet()
         {
-            _map = new List<int>();
+            _toShow = new List<int>();
+            _map = new HashSet<int>();
+            r = new Random();
         }
 
 
@@ -75,6 +80,8 @@ namespace Tests
 
             if (!res) _map.Add(val);
 
+            _toShow = new List<int>(_map);
+
             return !res;
         }
 
@@ -84,6 +91,7 @@ namespace Tests
             var res = _map.Contains(val);
 
             if (res) _map.Remove(val);
+            _toShow = new List<int>(_map);
 
             return res;
         }
@@ -91,10 +99,14 @@ namespace Tests
         /** Get a random element from the set. */
         public int GetRandom()
         {
-            Random r = new Random(); ;
+            if (_toShow.Count == 0) _toShow = new List<int>(_map);
 
-            var index = r.Next(0, _map.Count);
-            return _map[index];
+            var index = r.Next(0, _toShow.Count);
+            var res = _toShow[index];
+
+            _toShow.Remove(res);
+
+            return res;
         }
     }
 
