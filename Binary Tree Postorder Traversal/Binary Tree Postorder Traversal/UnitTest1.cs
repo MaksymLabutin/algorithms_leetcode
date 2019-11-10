@@ -32,7 +32,7 @@ namespace Tests
         {
             var list = new List<int>();
 
-            if (root == null) return;
+            if (root == null) return list;
 
             var stack = new Stack<TreeNode>();
 
