@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Populating Next Right Pointers in Each Node II", "Populating Next Right Pointers in Each Node II\Populating Next Right Pointers in Each Node II.csproj", "{609FBDD1-1B5C-43EF-9105-15B7DBEDC461}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{609FBDD1-1B5C-43EF-9105-15B7DBEDC461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609FBDD1-1B5C-43EF-9105-15B7DBEDC461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609FBDD1-1B5C-43EF-9105-15B7DBEDC461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609FBDD1-1B5C-43EF-9105-15B7DBEDC461}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E436E83-6E0C-4442-A668-449A1FD1C69A}
+	EndGlobalSection
+EndGlobal
