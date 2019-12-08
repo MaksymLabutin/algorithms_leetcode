@@ -60,7 +60,7 @@ namespace Tests
             if (root == null) return null;
             if (root.val <= q.val && root.val >= p.val || root.val >= q.val && root.val <= p.val) return root;
              
-            return root.val < q.val ? LowestCommonAncestor(root.right, p, q) : LowestCommonAncestor(root.right, p, q);
+            return root.val < q.val ? LowestCommonAncestor(root.right, p, q) : LowestCommonAncestor(root.left, p, q);
         }
 
         public class TreeNode
