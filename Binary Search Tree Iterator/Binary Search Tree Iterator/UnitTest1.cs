@@ -43,11 +43,11 @@ namespace Tests
         public class BSTIterator
         {
 
-            private Queue<int> queue = null;
+            private Queue<int> queue;
 
             public BSTIterator(TreeNode root)
             {
-                queue =  = new Queue<int>();
+                queue =  new Queue<int>();
                 SetNoded(root);
             }
 
