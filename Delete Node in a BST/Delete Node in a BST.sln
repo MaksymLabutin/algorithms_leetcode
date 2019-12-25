@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delete Node in a BST", "Delete Node in a BST\Delete Node in a BST.csproj", "{7530CB7C-7104-4D60-93AF-06EE97AA3A6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7530CB7C-7104-4D60-93AF-06EE97AA3A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7530CB7C-7104-4D60-93AF-06EE97AA3A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7530CB7C-7104-4D60-93AF-06EE97AA3A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7530CB7C-7104-4D60-93AF-06EE97AA3A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52EF8BB6-7898-4957-8AA4-32F0C8FAF6DF}
+	EndGlobalSection
+EndGlobal
