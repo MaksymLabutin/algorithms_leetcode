@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "All Elements in Two Binary Search Trees", "All Elements in Two Binary Search Trees\All Elements in Two Binary Search Trees.csproj", "{9B7BF223-5247-43BF-9282-321BD3767005}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B7BF223-5247-43BF-9282-321BD3767005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7BF223-5247-43BF-9282-321BD3767005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7BF223-5247-43BF-9282-321BD3767005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7BF223-5247-43BF-9282-321BD3767005}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FE2C4E3-69CA-47D6-A257-71253AF707ED}
+	EndGlobalSection
+EndGlobal
