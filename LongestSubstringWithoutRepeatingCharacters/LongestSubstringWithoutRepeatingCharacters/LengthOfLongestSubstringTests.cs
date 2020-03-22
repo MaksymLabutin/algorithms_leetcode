@@ -91,26 +91,30 @@ namespace LongestSubstringWithoutRepeatingCharacters
         }
 
         public int LengthOfLongestSubstring(string s)
-        { 
-            var set = new HashSet<char>();
+        {
+            var dic = new Dictionary<char, int>();
 
-            var res = 0;
+            var longestStrn = 0;
+            var pointer = -1;
 
             for (var i = 0; i < s.Length; i++)
             {
-                if (set.Contains(s[i]))
+                if (dic.ContainsKey(s[i]))
                 {
-                    res = set.Count > res ? set.Count : res;
-
-                    set.Clear();
-
-                    set.Add(s[i - 1]);
-                    set.Add(s[i]);
+                    pointer = pointer > dic[s[i]] ? pointer : dic[s[i]];
+                    dic[s[i]] = i;
                 }
-                else set.Add(s[i]);
+                else
+                {
+                    dic.Add(s[i], i);
+                }
+                longestStrn = longestStrn > i - pointer ? longestStrn : i - pointer;
+
             }
 
-            return set.Count > res ? set.Count : res;
+            if (pointer == -1) return s.Length;
+
+            return longestStrn;
         }
     }
 }
