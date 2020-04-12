@@ -54,9 +54,7 @@ namespace Tests
                 if (prices[i] > maxPrice) maxPrice = prices[i];
                 else
                 {
-                    profit += maxPrice - minPrice;
-
-
+                    profit += maxPrice - minPrice; 
                     minPrice = prices[i];
                     maxPrice = minPrice;
                 }
