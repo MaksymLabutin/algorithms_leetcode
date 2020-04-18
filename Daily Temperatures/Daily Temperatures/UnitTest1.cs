@@ -46,39 +46,24 @@ namespace Tests
 
         public int[] DailyTemperatures(int[] T)
         {
-            var hm = new Dictionary<int, int>();
+            if (T == null || T.Length == 0)
+                return new int[0];
 
-            var res = new int[T.Length];
+            int n = T.Length;
+            Stack<int> st = new Stack<int>();
+            int[] res = new int[n]; 
 
-            var maxT = 0;
-
-            for (var i = T.Length - 1; i >= 0; i--)
+            for (int i = n - 1; i >= 0; i--)
             {
-                if (T[i] > maxT)
+                while (st.Count > 0 && T[st.Peek()] <= T[i])
                 {
-                    maxT = T[i];
-                    hm.Add(T[i], i);
-                    continue;
+                    st.Pop();
                 }
 
-                var searchVal = T[i] + 1;
 
-                var minIndex = i;
+                res[i] = st.Count > 0 ? st.Peek() - i : 0;
 
-                while (searchVal <= 100)
-                {
-                    if (hm.ContainsKey(searchVal))
-                    {
-                        if (minIndex == i) minIndex = hm[searchVal];
-                        else minIndex = hm[searchVal] < minIndex ? hm[searchVal] : minIndex;
-                    }
-                    searchVal++;
-                }
-
-                if (hm.ContainsKey(T[i])) hm[T[i]] = i;
-                else hm.Add(T[i], i);
-
-                res[i] = minIndex - i;
+                st.Push(i);
             }
 
             return res;
