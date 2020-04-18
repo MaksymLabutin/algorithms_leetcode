@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily Temperatures", "Daily Temperatures\Daily Temperatures.csproj", "{CAD2106E-BC29-4228-AF17-AEEF70C8864E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAD2106E-BC29-4228-AF17-AEEF70C8864E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD2106E-BC29-4228-AF17-AEEF70C8864E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD2106E-BC29-4228-AF17-AEEF70C8864E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD2106E-BC29-4228-AF17-AEEF70C8864E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {764EFA9E-EF87-4C28-8438-094EC8FE9199}
+	EndGlobalSection
+EndGlobal
