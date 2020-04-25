@@ -4,34 +4,32 @@ namespace Tests
 {
     public class Tests
     {
-         
+
 
         [Test]
         public void Test1()
         {
             //3,2,0,-4
-            var listNode = new ListNode(2)
+            var cycledNode = new ListNode(2);
+            var head = new ListNode(3)
             {
-                next = new ListNode(0)
+                next = cycledNode.next = new ListNode(0)
                 {
-                    
+                    next = new ListNode(-4)
+                    {
+                        next = cycledNode
+                    }
                 }
             };
 
-            var a =  new ListNode(-4)
-            {
-                next = listNode
-            };
-            var head = new ListNode(3)
-            {
-                next = listNode
-            };
+            var actual = HasCycle(head);
 
-            Assert.Pass();
+            Assert.IsTrue(actual);
         }
 
         public bool HasCycle(ListNode head)
         {
+            if (head == null) return false;
             var fast = head.next;
             var slow = head;
 
