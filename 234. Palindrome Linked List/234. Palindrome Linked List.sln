@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "234. Palindrome Linked List", "234. Palindrome Linked List\234. Palindrome Linked List.csproj", "{73DFD2AB-9322-40C3-AC98-F74C1AC2730D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73DFD2AB-9322-40C3-AC98-F74C1AC2730D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DFD2AB-9322-40C3-AC98-F74C1AC2730D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DFD2AB-9322-40C3-AC98-F74C1AC2730D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DFD2AB-9322-40C3-AC98-F74C1AC2730D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A73DF557-2BFA-487E-B581-6AD70B55FB9C}
+	EndGlobalSection
+EndGlobal
