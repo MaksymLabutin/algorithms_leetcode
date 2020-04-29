@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1379. Find Corresponding Node of BT in Clone", "1379. Find Corresponding Node of BT in Clone\1379. Find Corresponding Node of BT in Clone.csproj", "{E7E6330F-6927-4CC9-A915-BDB52844B535}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7E6330F-6927-4CC9-A915-BDB52844B535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E6330F-6927-4CC9-A915-BDB52844B535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E6330F-6927-4CC9-A915-BDB52844B535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E6330F-6927-4CC9-A915-BDB52844B535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F0D0E7-CE3A-4F21-9143-A9635610EB2A}
+	EndGlobalSection
+EndGlobal
