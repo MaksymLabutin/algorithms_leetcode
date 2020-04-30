@@ -49,7 +49,7 @@ namespace Tests
 
             Assert.AreEqual(1, actual.val);
             Assert.AreEqual(2, actual.next.val); 
-            Assert.Null(actual.next.next.next);
+            Assert.Null(actual.next.next);
         }
 
         public ListNode MergeTwoLists(ListNode l1, ListNode l2)
