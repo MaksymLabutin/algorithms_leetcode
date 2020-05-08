@@ -33,7 +33,7 @@ namespace Tests
         public TreeNode ConstructMaximumBinaryTree(int[] nums)
         {
 
-            if (nums.Lenght == 0) return null;
+            if (nums.Length == 0) return null;
             return Visit(nums, 0, nums.Length - 1);
         }
 
