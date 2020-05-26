@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "791. Custom Sort String", "791. Custom Sort String\791. Custom Sort String.csproj", "{F882B69A-7F58-43DD-89DF-87AD285D0174}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F882B69A-7F58-43DD-89DF-87AD285D0174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F882B69A-7F58-43DD-89DF-87AD285D0174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F882B69A-7F58-43DD-89DF-87AD285D0174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F882B69A-7F58-43DD-89DF-87AD285D0174}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AB9D0D5-ADD7-4A78-BB7F-5DFC40273E14}
+	EndGlobalSection
+EndGlobal
