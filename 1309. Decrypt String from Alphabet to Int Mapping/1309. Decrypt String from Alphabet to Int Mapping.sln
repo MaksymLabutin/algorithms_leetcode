@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1309. Decrypt String from Alphabet to Int Mapping", "1309. Decrypt String from Alphabet to Int Mapping\1309. Decrypt String from Alphabet to Int Mapping.csproj", "{F34DEB40-BEB8-410E-839C-F9B897E1DF3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F34DEB40-BEB8-410E-839C-F9B897E1DF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34DEB40-BEB8-410E-839C-F9B897E1DF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34DEB40-BEB8-410E-839C-F9B897E1DF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34DEB40-BEB8-410E-839C-F9B897E1DF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94AF099A-3829-4ADD-98CF-F7F267C6734E}
+	EndGlobalSection
+EndGlobal
