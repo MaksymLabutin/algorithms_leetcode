@@ -70,6 +70,37 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
+
+        [Test]
+        public void Test5()
+        {
+            // [2,4,3,1,null,0,5,null,6,null,null,null,7]
+            var root = new TreeNode(2)
+            {
+                left = new TreeNode(4)
+                {
+                    left = new TreeNode(1)
+                    {
+                        right = new TreeNode(6)
+                    }
+                },
+                right = new TreeNode(3)
+                {
+                    left = new TreeNode(0),
+                    right = new TreeNode(5)
+                    {
+                        right = new TreeNode(7)
+                    }
+                }
+            };
+
+            var actual = MaxAncestorDiff(root);
+
+            var expected = 5;
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [Test]
         public void Test4()
         {
@@ -91,32 +122,42 @@ namespace Tests
 
             Assert.AreEqual(expected, actual);
         }
-
-
-        private int _max;
-        private HashSet<(int, int)> _visited;
+         
         public int MaxAncestorDiff(TreeNode root)
-        {
-            _max = 0;
-            if (root == null) return _max;
-            _visited = new HashSet<(int, int)>();
-            Visit(root, root.val);
-            return _max;
+        { 
+            if (root == null) return 0;
+
+            var res = Visit(root, root.val, root.val);
+            return res.max - res.min;
         }
 
-        private void Visit(TreeNode node, int val)
+        private (int max, int min) Visit(TreeNode node, int max, int min)
         {
-            if (node == null) return;
+            if (node == null) return (max, min);
 
-            if(_visited.Contains((node.val, val))) return;
-            _visited.Add((node.val, val));
+            var currMax = Math.Max(node.val, max);
+            var currMin = Math.Min(node.val, min);
 
-            _max = _max > Math.Abs(node.val - val) ? _max : Math.Abs(node.val - val);
-            Visit(node.left, Math.Max(node.val, val));
-            Visit(node.right, Math.Max(node.val, val));
-            Visit(node.left, Math.Min(node.val, val));
-            Visit(node.right, Math.Min(node.val, val));
+            var l = Visit(node.left, currMax, currMin);
+            var r = Visit(node.right, currMax, currMin);
+
+            return l.max - l.min > r.max - r.min ? l : r;
         }
+
+
+        //private void Visit(TreeNode node, int val)
+        //{
+        //    if (node == null) return;
+
+        //    if(_visited.Contains((node.val, val))) return;
+        //    _visited.Add((node.val, val));
+
+        //    _max = _max > Math.Abs(node.val - val) ? _max : Math.Abs(node.val - val);
+        //    Visit(node.left, Math.Max(node.val, val));
+        //    Visit(node.right, Math.Max(node.val, val));
+        //    Visit(node.left, Math.Min(node.val, val));
+        //    Visit(node.right, Math.Min(node.val, val));
+        //}
 
         public class TreeNode
         {
