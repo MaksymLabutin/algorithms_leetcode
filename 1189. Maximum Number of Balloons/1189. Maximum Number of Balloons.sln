@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1189. Maximum Number of Balloons", "1189. Maximum Number of Balloons\1189. Maximum Number of Balloons.csproj", "{D8918EB3-5DCC-4C4F-8E7E-DFF8489775BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8918EB3-5DCC-4C4F-8E7E-DFF8489775BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8918EB3-5DCC-4C4F-8E7E-DFF8489775BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8918EB3-5DCC-4C4F-8E7E-DFF8489775BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8918EB3-5DCC-4C4F-8E7E-DFF8489775BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0108C9FF-A01C-4D55-A846-4AD373A15806}
+	EndGlobalSection
+EndGlobal
