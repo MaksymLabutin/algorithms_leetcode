@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "215. Kth Largest Element in an Array", "215. Kth Largest Element in an Array\215. Kth Largest Element in an Array.csproj", "{42839F63-CAB4-4E57-B53A-9AA317643E5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42839F63-CAB4-4E57-B53A-9AA317643E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42839F63-CAB4-4E57-B53A-9AA317643E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42839F63-CAB4-4E57-B53A-9AA317643E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42839F63-CAB4-4E57-B53A-9AA317643E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {439B841F-ED37-4BE1-8A3C-BE189B595DE3}
+	EndGlobalSection
+EndGlobal
