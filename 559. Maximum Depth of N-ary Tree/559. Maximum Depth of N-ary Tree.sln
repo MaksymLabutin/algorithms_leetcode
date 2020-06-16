@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "559. Maximum Depth of N-ary Tree", "559. Maximum Depth of N-ary Tree\559. Maximum Depth of N-ary Tree.csproj", "{F82F910E-8950-46D8-A5D3-A7D9F5BA215D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F82F910E-8950-46D8-A5D3-A7D9F5BA215D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82F910E-8950-46D8-A5D3-A7D9F5BA215D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82F910E-8950-46D8-A5D3-A7D9F5BA215D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82F910E-8950-46D8-A5D3-A7D9F5BA215D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA935FDD-BE64-4643-B9D6-6E018746C6E4}
+	EndGlobalSection
+EndGlobal
