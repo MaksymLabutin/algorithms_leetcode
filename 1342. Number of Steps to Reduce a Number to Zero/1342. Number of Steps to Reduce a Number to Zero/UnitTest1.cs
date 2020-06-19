@@ -15,8 +15,7 @@ namespace Tests
         }
 
         public int NumberOfSteps(int num)
-        {
-
+        { 
             var step = 0;
             while (num > 0)
             {
