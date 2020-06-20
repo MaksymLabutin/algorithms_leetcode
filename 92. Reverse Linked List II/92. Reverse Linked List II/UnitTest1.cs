@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using NUnit.Framework;
 
 namespace Tests
@@ -37,27 +38,85 @@ namespace Tests
             Assert.Null(actual.next.next.next.next.next);
         }
 
+        [Test]
+        public void Test2()
+        {
+            var head = new ListNode(1)
+            {
+                next = new ListNode(2)
+                {
+                    next = new ListNode(3)
+                    {
+                        next = new ListNode(4)
+                        {
+                            next = new ListNode(5)
+                        }
+                    }
+                }
+            };
+
+            var m = 1;
+            var n = 4;
+
+            var actual = ReverseBetween(head, m, n);
+
+
+                //[4,3,2,1,5]
+            Assert.AreEqual(4, actual.val);
+            Assert.AreEqual(3, actual.next.val);
+            Assert.AreEqual(2, actual.next.next.val);
+            Assert.AreEqual(1, actual.next.next.next.val);
+            Assert.AreEqual(5, actual.next.next.next.next.val);
+            Assert.Null(actual.next.next.next.next.next);
+        }
+
         public ListNode ReverseBetween(ListNode head, int m, int n)
         {
             if (head == null) return null;
+            
+            var copiedHead = head; 
 
-            var copiedHead = head;
-            var headToInser = head;
-
-            for (var i = 1; i <= n; i++)
+            ListNode tempList = null; 
+            ListNode nodeToInsert = null;
+            
+            var steps = 1; 
+            while (copiedHead != null)
             {
-                if (copiedHead == null) return head;
-                if (i < m)
+
+                if (steps >= m && steps <= n)
                 {
-                    headToInser = headToInser.next;
-                    continue;
+                    if (tempList == null) tempList = new ListNode(copiedHead.val);
+                    else
+                    {
+                        var node = new ListNode(copiedHead.val);
+                        node.next = tempList;
+                        tempList = node;
+                    } 
                 }
 
-                var node = copiedHead.next;
+                if (steps == n)
+                {
+                    if (nodeToInsert == null)
+                    {
+                        nodeToInsert = tempList;
+                        head = nodeToInsert;
+                    }
+                    else nodeToInsert.next = tempList;
+                    while (nodeToInsert.next != null)
+                    {
+                        nodeToInsert = nodeToInsert.next;
+                    }
 
+                    nodeToInsert.next = copiedHead.next;
 
+                    break;
+                }
 
-            }
+                steps++;
+                if (tempList == null) nodeToInsert = copiedHead;
+
+                copiedHead = copiedHead.next;
+            } 
 
             return head;
         }
