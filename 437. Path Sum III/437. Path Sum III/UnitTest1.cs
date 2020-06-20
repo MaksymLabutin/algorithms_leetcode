@@ -126,7 +126,7 @@ namespace Tests
 
         [Test]
         public void Test6()
-        {  
+        {
             var root = new TreeNode(1)
             {
                 left = new TreeNode(2)
@@ -144,7 +144,7 @@ namespace Tests
         public void Test7()
         {
             //[1,-2,-3,1,3,-2,null,-1]
-            
+
             var root = new TreeNode(1)
             {
                 left = new TreeNode(-2)
@@ -157,7 +157,7 @@ namespace Tests
                 },
                 right = new TreeNode(-3)
                 {
-                    left = new TreeNode(2) 
+                    left = new TreeNode(2)
                 }
             };
 
@@ -172,8 +172,8 @@ namespace Tests
         public void Test8()
         {
             //[1,0,1,1,2,0,-1,0,1,-1,0,-1,0,1,0]
-     
-            
+
+
             var root = new TreeNode(1)
             {
                 left = new TreeNode(0)
@@ -213,48 +213,78 @@ namespace Tests
         }
 
 
-        private int _sum;
         private int _res;
-        private HashSet<(TreeNode, TreeNode)> _visited;
-
         public int PathSum(TreeNode root, int sum)
-        {
+        { 
             if (root == null) return 0;
-            if (root.left == null && root.right == null) return root.val == sum ? 1 : 0;
-
             _res = 0;
-            _sum = sum;
-            _visited = new HashSet<(TreeNode, TreeNode)>(); 
-            Visit(root, root, 0);
-
+            SumPath(root, sum, new List<int>()); 
             return _res;
         }
-
-        private void Visit(TreeNode node, TreeNode root, int currSum)
+         
+        private void SumPath(TreeNode node, int sum, List<int> vals)
         { 
-            var sum = node.val + currSum;
-            if (_visited.Contains((node, root)) && node.val != _sum) return;
-            _visited.Add((node, root));
+            if (node == null) return;
 
-            if (sum == _sum) _res++;
-            else if (root.val == _sum)
+            vals.Add(node.val);
+
+            SumPath(node.left, sum, vals);
+            SumPath(node.right, sum, vals);
+
+            var curSum = 0;
+
+            for (var i = vals.Count - 1; i >= 0; i--)
             {
-                _res++;
+                curSum += vals[i];
+                if (curSum == sum) _res++;
             }
 
-            if (node.left != null)
-            {
-            Visit(node.left, node, node.val);
-                Visit(node.left, root, sum);
-            }
-
-            if (node.right != null)
-            {
-            Visit(node.right, node, node.val);
-                Visit(node.right, root, sum);
-            }
+            vals.RemoveAt(vals.Count - 1);
 
         }
+
+        //private int _sum;
+        //private int _res;
+        //private HashSet<(TreeNode, TreeNode)> _visited;
+
+        //public int PathSum(TreeNode root, int sum)
+        //{
+        //    if (root == null) return 0;
+        //    if (root.left == null && root.right == null) return root.val == sum ? 1 : 0;
+
+        //    _res = 0;
+        //    _sum = sum;
+        //    _visited = new HashSet<(TreeNode, TreeNode)>();
+        //    Visit(root, root, 0);
+
+        //    return _res;
+        //}
+
+        //private void Visit(TreeNode node, TreeNode root, int currSum)
+        //{
+        //    var sum = node.val + currSum;
+        //    if (_visited.Contains((node, root)) && node.val != _sum) return;
+        //    _visited.Add((node, root));
+
+        //    if (sum == _sum) _res++;
+        //    else if (root.val == _sum)
+        //    {
+        //        _res++;
+        //    }
+
+        //    if (node.left != null)
+        //    {
+        //        Visit(node.left, node, node.val);
+        //        Visit(node.left, root, sum);
+        //    }
+
+        //    if (node.right != null)
+        //    {
+        //        Visit(node.right, node, node.val);
+        //        Visit(node.right, root, sum);
+        //    }
+
+        //}
 
 
         //private void Visit(TreeNode root, int currSum)
