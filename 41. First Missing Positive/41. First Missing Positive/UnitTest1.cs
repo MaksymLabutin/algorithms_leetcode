@@ -164,28 +164,24 @@ namespace Tests
 
         public int FirstMissingPositive(int[] nums)
         {
-            if (nums.Length == 0) return 1;
-            if (nums.Length == 1) return nums[0] == 1 ? 2 : 1;
+            if (nums.Length < 2)
+            {
+                if (nums.Length == 0) return 1;
+                return nums[0] == 1 ? 2 : 1;
+            } 
 
             for (var i = 0; i < nums.Length; i++)
             {
-                if(nums[i] < 0) continue;
+                if(nums[i] < 0 || nums[i] >= nums.Length || nums[i] == i) continue;
 
-                if (nums[i] < nums.Length && nums[i] != i)
-                {
-                    var tmp = nums[nums[i]];
-                    nums[nums[i]] = nums[i];
-                    nums[i] = tmp;
+                Swap(nums, i);
 
-                    var j = i;
-                    while (j != nums[j])
-                    {  
-                        if (nums[j] < 0 || nums[j] >= nums.Length  || nums[nums[j]] == nums[j]) break;
+                var j = i;
+                while (j != nums[j])
+                {  
+                    if (nums[j] < 0 || nums[j] >= nums.Length  || nums[nums[j]] == nums[j]) break;
 
-                        var tmp2 = nums[nums[j]];
-                        nums[nums[j]] = nums[j];
-                        nums[j] = tmp2; 
-                    }
+                    Swap(nums, j);
                 }
             }
 
@@ -195,6 +191,13 @@ namespace Tests
             }
 
             return nums[0] == nums[nums.Length - 1] + 1 ? nums[0] + 1 : nums.Length;
+        }
+
+        private void Swap(int[] arr, int i)
+        {
+            var tmp = arr[arr[i]];
+            arr[arr[i]] = arr[i];
+            arr[i] = tmp;
         }
     }
 }
