@@ -173,14 +173,12 @@ namespace Tests
             for (var i = 0; i < nums.Length; i++)
             {
                 if(nums[i] < 0 || nums[i] >= nums.Length || nums[i] == i) continue;
-
                 Swap(nums, i);
 
                 var j = i;
                 while (j != nums[j])
                 {  
                     if (nums[j] < 0 || nums[j] >= nums.Length  || nums[nums[j]] == nums[j]) break;
-
                     Swap(nums, j);
                 }
             }
