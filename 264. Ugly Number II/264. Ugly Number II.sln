@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "264. Ugly Number II", "264. Ugly Number II\264. Ugly Number II.csproj", "{BCFE30B3-2D71-4392-8F4D-05700B99581C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCFE30B3-2D71-4392-8F4D-05700B99581C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFE30B3-2D71-4392-8F4D-05700B99581C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFE30B3-2D71-4392-8F4D-05700B99581C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFE30B3-2D71-4392-8F4D-05700B99581C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D20FD03-B8EC-478A-A6B5-5EF74C875D85}
+	EndGlobalSection
+EndGlobal
