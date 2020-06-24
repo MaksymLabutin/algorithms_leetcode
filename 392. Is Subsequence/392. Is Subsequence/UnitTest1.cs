@@ -55,7 +55,7 @@ namespace Tests
                 if (s[sPointer] == symbol)
                 {
                     sPointer++;
-                    if (sPointer > s.Length) return true;
+                    if (sPointer >= s.Length) return true;
                 }
             }
 
