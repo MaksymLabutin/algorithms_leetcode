@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "921. Minimum Add to Make Parentheses Valid", "921. Minimum Add to Make Parentheses Valid\921. Minimum Add to Make Parentheses Valid.csproj", "{6B4C19B9-9BAB-4C7A-BC5F-1A84644AF6AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B4C19B9-9BAB-4C7A-BC5F-1A84644AF6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4C19B9-9BAB-4C7A-BC5F-1A84644AF6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4C19B9-9BAB-4C7A-BC5F-1A84644AF6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4C19B9-9BAB-4C7A-BC5F-1A84644AF6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F5B0D91-3D32-4A09-9F53-4E3AA0750711}
+	EndGlobalSection
+EndGlobal
