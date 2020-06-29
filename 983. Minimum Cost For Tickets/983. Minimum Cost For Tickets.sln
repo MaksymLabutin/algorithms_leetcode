@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "983. Minimum Cost For Tickets", "983. Minimum Cost For Tickets\983. Minimum Cost For Tickets.csproj", "{3D08D262-0D44-4999-85C1-72BBEF8D6C8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D08D262-0D44-4999-85C1-72BBEF8D6C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D08D262-0D44-4999-85C1-72BBEF8D6C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D08D262-0D44-4999-85C1-72BBEF8D6C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D08D262-0D44-4999-85C1-72BBEF8D6C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4092667E-EF69-454D-B9D3-80C7CB1A19E6}
+	EndGlobalSection
+EndGlobal
