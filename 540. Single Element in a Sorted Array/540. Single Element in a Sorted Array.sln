@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "540. Single Element in a Sorted Array", "540. Single Element in a Sorted Array\540. Single Element in a Sorted Array.csproj", "{E71DE641-5C5B-4FE8-98D3-EFA86E75E103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E71DE641-5C5B-4FE8-98D3-EFA86E75E103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71DE641-5C5B-4FE8-98D3-EFA86E75E103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71DE641-5C5B-4FE8-98D3-EFA86E75E103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71DE641-5C5B-4FE8-98D3-EFA86E75E103}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36010249-2B67-41C5-B071-F1DB70C9B164}
+	EndGlobalSection
+EndGlobal
