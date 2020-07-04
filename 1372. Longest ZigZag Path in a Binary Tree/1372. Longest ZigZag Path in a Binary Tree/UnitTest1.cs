@@ -60,11 +60,11 @@ namespace Tests
                 {
                     LongestZigZag(node.right, false, h + 1);
                     LongestZigZag(node.left, true, 0);
-                  
-                } 
+
+                }
             }
 
-            _max = Math.Max(h, _max); 
+            _max = Math.Max(h, _max);
         }
 
         public class TreeNode
