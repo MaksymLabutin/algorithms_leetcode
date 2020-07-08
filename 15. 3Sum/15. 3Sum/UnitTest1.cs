@@ -86,13 +86,11 @@ namespace Tests
                     var val = 0 - (sortedArray[x] + sortedArray[y]);
 
                     if (!dictionary.ContainsKey(val) || !dictionary[val].Any(_ => _ != x && _ != y)) continue;
-                    {
-                        var arr = new List<int> { sortedArray[x], sortedArray[y], val }.OrderBy(_ => _).ToList();
-                        if (memo.Contains((arr[0], arr[1], arr[2]))) continue;
+                    var arr = new List<int> { sortedArray[x], sortedArray[y], val }.OrderBy(_ => _).ToList();
+                    if (memo.Contains((arr[0], arr[1], arr[2]))) continue;
 
-                        memo.Add((arr[0], arr[1], arr[2]));
-                        threeSum.Add(arr);
-                    }
+                    memo.Add((arr[0], arr[1], arr[2]));
+                    threeSum.Add(arr);
 
                 }
             }
