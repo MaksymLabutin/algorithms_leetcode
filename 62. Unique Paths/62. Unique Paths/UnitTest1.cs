@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 using NUnit.Framework;
 
 namespace Tests
@@ -28,29 +29,59 @@ namespace Tests
 
             var actual = UniquePaths(m, n);
 
-            var expected = 225792840;
+            var expected = 5200300;
             Assert.AreEqual(expected, actual);
         }
 
-        //private Dictionary<(int, int), int> memo;
-        public int UniquePaths(int m, int n)
+
+        [Test]
+        public void Test3()
         {
-            if (m == 1 || n == 1) return 1;
-            return UniquePaths(m, n, 0, new Dictionary<(int, int), int>());
+            var m = 2;
+            var n = 2;
+
+            var actual = UniquePaths(m, n);
+
+            var expected = 2;
+            Assert.AreEqual(expected, actual);
         }
 
 
-        private int UniquePaths(int m, int n, int paths, Dictionary<(int, int), int> memo)
+
+        [Test]
+        public void Test4()
+        {
+            var m = 3;
+            var n = 3;
+
+            var actual = UniquePaths(m, n);
+
+            var expected = 6;
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        private Dictionary<(int, int), int> _memo;
+
+        public int UniquePaths(int m, int n)
+        {
+            if (m == 1 || n == 1) return 1;
+            _memo = new Dictionary<(int, int), int>();
+            return Visit(m - 1, n - 1);
+        }
+
+
+        private int Visit(int m, int n)
         {
             if (m < 0 || n < 0) return 0;
-            if (m == 0 && n == 0) return paths;
 
-            if (memo.ContainsKey((m, n))) return memo[(m, n)];
+            if (m == 0 && n == 0) return 1;
 
-            var uniquePaths = UniquePaths(m - 1, n, paths, memo) + UniquePaths(m - 1, n, paths + 1, memo) +
-                              UniquePaths(m, n - 1, paths, memo) + UniquePaths(m, n - 1, paths + 1, memo);
+            if (_memo.ContainsKey((m, n))) return _memo[(m, n)];
 
-            memo.Add((m, n), uniquePaths);
+            var uniquePaths = Visit(m - 1, n) + Visit(m, n - 1);
+
+            _memo.Add((m, n), uniquePaths);
 
             return uniquePaths;
         }
