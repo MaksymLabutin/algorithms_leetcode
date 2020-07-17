@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Tests
 {
     public class Tests
-    { 
+    {
         [Test]
         public void Test1()
         {
@@ -33,7 +33,7 @@ namespace Tests
             var matrix = new int[][]
             {
                 new []{ 1,1,1 },
-                new []{ 0,1,2 }, 
+                new []{ 0,1,2 },
             };
 
             SetZeroes(matrix);
@@ -52,7 +52,7 @@ namespace Tests
             var matrix = new int[][]
             {
                 new []{ 0,1,1 },
-                new []{ 0,1,2 }, 
+                new []{ 0,1,2 },
             };
 
             SetZeroes(matrix);
@@ -68,28 +68,43 @@ namespace Tests
 
         public void SetZeroes(int[][] matrix)
         {
-            var flagR = int.MaxValue / 6;
-            var flagC = -int.MaxValue / 6;
-            for (var row = 0; row < matrix.GetLength(0); row++)
+            var flag = int.MaxValue / 6;
+            for (var row = 1; row < matrix.GetLength(0); row++)
             {
-                for (var col = 0; col < matrix[row].Length; col++)
+                for (var col = 1; col < matrix[row].Length; col++)
                 {
-                    if(matrix[row][col] != 0) continue;
+                    if (matrix[row][col] != 0) continue;
 
-                    matrix[row][0] = flagR;
-                    matrix[0][col] = flagC;
+                    matrix[0][col] = -flag;
+                    matrix[row][0] = flag;
+
                 }
             }
 
+            for (int row = 0; row < matrix.Length; row++)
+            {
+                if(matrix[])
+            }
+
+        }
+
+        private void SetZeroCol(int[][] matrix, int currCol)
+        {
             for (var row = matrix.GetLength(0) - 1; row >= 0; row--)
             {
-                for (var col = matrix[row].Length - 1; col >= 0 ; col--)
+                matrix[row][currCol] = 0;
+            }
+        }
+
+        private void SetZeroRow(int[][] matrix, int currRow)
+        {
+            for (var row = currRow; row >= currRow; row--)
+            {
+                for (var col = 0; col < matrix[currRow].Length; col++)
                 {
-                    if (matrix[0][col] == flagR) matrix[row][col] = 0;
-                    if (matrix[row][0] == flagC) matrix[row][col] = 0;
+                    matrix[currRow][col] = 0;
                 }
             }
-
         }
     }
 }
