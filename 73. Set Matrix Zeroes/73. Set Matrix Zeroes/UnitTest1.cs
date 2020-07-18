@@ -46,6 +46,7 @@ namespace Tests
 
             CollectionAssert.AreEqual(expected, matrix);
         }
+
         [Test]
         public void Test3()
         {
@@ -66,45 +67,120 @@ namespace Tests
             CollectionAssert.AreEqual(expected, matrix);
         }
 
+        [Test]
+        public void Test4()
+        {
+            //[[-4,-2147483648,6,-7,0],[-8,6,-8,-6,0],[2147483647,2,-9,-6,-10]]
+            var matrix = new int[][]
+            {
+                new []{ -4,-2147483648,6,-7,0 },
+                new []{-8,6,-8,-6,0},
+                new []{2147483647,2,-9,-6,-10}
+            };
+
+            SetZeroes(matrix);
+                //[[0,0,0,0,0],[0,0,0,0,0],[2147483647,2,-9,-6,0]]
+            var expected = new int[][]
+            {
+                new []{ 0,0,0,0,0 },
+                new []{0,0,0,0,0},
+                new []{ 2147483647, 2, -9, -6, 0 }
+            };
+
+            CollectionAssert.AreEqual(expected, matrix);
+        }
+        //todo
+        [Test]
+        public void Test5()
+        {
+            //[[8,3,6,9,7,8,0,6],[0,3,7,0,0,4,3,8],[5,3,6,7,1,6,2,6],[8,7,2,5,0,6,4,0],[0,2,9,9,3,9,7,3]]
+            var matrix = new int[][]
+            {
+                new []{ 8,3,6,9,7,8,0,6 },
+                new []{0,3,7,0,0,4,3,8},
+                new []{ 5, 3, 6, 7, 1, 6, 2, 6 },
+                new []{ 8,7,2,5,0,6,4,0},
+                new []{ 0,2,9,9,3,9,7,3}
+            };
+
+            SetZeroes(matrix);
+            //[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,3,6,0,0,6,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+            var expected = new int[][]
+            {
+                new []{ 0,0,0,0,0,0,0,0 },
+                new []{0,0,0,0,0,0,0,0},
+                new []{ 0, 3, 6, 0, 0, 6, 0, 0 },
+                new []{ 0,0,0,0,0,0,0,0 },
+                new []{ 0,0,0,0,0,0,0,0 }
+            };
+
+            CollectionAssert.AreEqual(expected, matrix);
+        }
+
         public void SetZeroes(int[][] matrix)
         {
             var flag = int.MaxValue / 6;
-            for (var row = 1; row < matrix.GetLength(0); row++)
+            for (var row = 0; row < matrix.GetLength(0); row++)
             {
-                for (var col = 1; col < matrix[row].Length; col++)
+                for (var col = 0; col < matrix[row].Length; col++)
                 {
                     if (matrix[row][col] != 0) continue;
 
-                    matrix[0][col] = -flag;
+                    if (row == 0)
+                    {
+                        matrix[0][col] = -flag;
+                        matrix[row][0] = col == 0 || matrix[row][0] == 0 ? 0 : flag;
+                        continue;
+                    }
+
                     matrix[row][0] = flag;
+                    if (matrix[0][col] != 0)
+                    {
+                        matrix[0][col] = -flag;
+                    }
 
                 }
             }
 
+            SetZeroesRows(matrix, flag);
+            SetZeroesCols(matrix, -flag);
+
+            //for (var row = matrix.GetLength(0) - 1; row >= 0; row--)
+            //{
+            //    for (var col = matrix[row].Length - 1; col >= 0; col--)
+            //    {
+            //        if (matrix[row][0] == 0 || matrix[row][0] == flag || matrix[0][col] == -flag || matrix[0][col] == 0) matrix[row][col] = 0;
+            //    }
+            //}
+        }
+
+        private void SetZeroesRows(int[][] matrix, int flag)
+        {
             for (int row = 0; row < matrix.Length; row++)
             {
-                if(matrix[])
-            }
-
-        }
-
-        private void SetZeroCol(int[][] matrix, int currCol)
-        {
-            for (var row = matrix.GetLength(0) - 1; row >= 0; row--)
-            {
-                matrix[row][currCol] = 0;
-            }
-        }
-
-        private void SetZeroRow(int[][] matrix, int currRow)
-        {
-            for (var row = currRow; row >= currRow; row--)
-            {
-                for (var col = 0; col < matrix[currRow].Length; col++)
+                if (matrix[row][0] == 0 || matrix[row][0] == flag)
                 {
-                    matrix[currRow][col] = 0;
+                    for (var col = 0; col < matrix[row].Length; col++) matrix[row][col] = 0;
                 }
             }
         }
+
+        private void SetZeroesCols(int[][] matrix, int flag)
+        {
+            for (int row = 0; row < 1; row++)
+            {
+                for (int col = 0; col < matrix[row].Length; col++)
+                {
+                    if (matrix[row][col] == 0 || matrix[row][col] == flag)
+                    {
+                        for (int currRow = 0; currRow < matrix.Length; currRow++)
+                        {
+                            matrix[currRow][col] = 0;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
