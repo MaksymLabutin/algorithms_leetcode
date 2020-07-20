@@ -6,12 +6,13 @@ namespace Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void SetUp()
-        {
-            _deepestNode = null;
-            _k = Int32.MaxValue; 
-        }
+
+        //[SetUp]
+        //public void SetUp()
+        //{
+        //    _deepestNode = null;
+        //    k = 0;
+        //}
 
         [Test]
         public void Test1()
@@ -78,32 +79,54 @@ namespace Tests
             Assert.AreEqual(4, actual.right.val);
         }
 
+        [Test]
+        public void Test3()
+        {
+            var root = new TreeNode(3)
+            {
+                left = new TreeNode(5)
+                {
+                    left = new TreeNode(6),
+                    right = new TreeNode(2)
+                    {
+                        left = new TreeNode(7),
+                        right = new TreeNode(4)
+                    }
+                },
+                right = new TreeNode(1)
+                {
+                    left = new TreeNode(0)
+                    {
+                        left = new TreeNode(1)
+                    },
+                    right = new TreeNode(8)
+                }
+            };
 
-        private TreeNode _deepestNode;
-        private int _k = Int32.MaxValue;
+            var actual = SubtreeWithAllDeepest(root);
+
+            Assert.AreEqual(3, actual.val); 
+        } 
+
+
         public TreeNode SubtreeWithAllDeepest(TreeNode root)
         {
-            if (root == null) return null;
-
-            Visit(root, 0);
-
-            return _deepestNode;
+            return root == null ? null : Dfs(root, 0).node;
         }
 
-        private int Visit(TreeNode root, int deep)
+        private (TreeNode node, int deep) Dfs(TreeNode root, int deep)
         {
-            if (root == null) return 0;
+            if (root == null) return (null, deep);
 
-            var l = Visit(root.left, deep + 1);
-            var r = Visit(root.right, deep + 1); 
-
-            if (l == r && _k > deep)
-            {
-                _k = deep;
-                _deepestNode = root;
+            var l = Dfs(root.left, deep + 1);
+            var r = Dfs(root.right, deep + 1);
+             
+            if (l.deep == r.deep)
+            { 
+                return (root, l.deep);
             }
 
-            return deep;
+            return l.deep > r.deep ? (l.node, l.deep) : (r.node, r.deep);
         }
 
         public class TreeNode
