@@ -52,53 +52,81 @@ namespace Tests
 
             Assert.AreEqual(expected, actual);
         }
-         
 
-        private Dictionary<int, Node> _sources;
-        private int _minPrice;
-
+        //Bellman-Ford algo
         public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int K)
         {
-            _sources = new Dictionary<int, Node>();
-            _minPrice = int.MaxValue; 
+            var dp = new double[K + 2][];
 
-            for (var i = 1; i <= n; i++)
+            for (var i = 0; i < K + 2; i++)
             {
-                _sources.Add(i - 1, new Node());
+                dp[i] = new double[n];
+                for (var j = 0; j < n; j++)
+                {
+                    dp[i][j] = int.MaxValue;
+                }
+            } 
+
+            dp[0][src] = 0;
+
+            for (var i = 1; i < K + 2; i++)
+            {
+                dp[i][src] = 0;
+
+                foreach (var flight in flights)
+                {
+                    dp[i][flight[1]] = Math.Min(dp[i][flight[1]], dp[i - 1][flight[0]] + flight[2]);
+                }
             }
 
-            foreach (var flight in flights)
-            {
-                var node = _sources[flight[0]];
-                node.Airport = flight[0];
-                _sources[flight[1]].Airport = flight[1];
-                node.DestinationPrice.Add(_sources[flight[1]], flight[2]);
-            }
-
-            FindCheapestPrice(0, src, dst, K);
-
-            return _minPrice == int.MaxValue ? -1 : _minPrice;
+            return dp[K + 1][dst] < int.MaxValue ? (int)dp[K + 1][dst] : -1;
         }
 
+        //private Dictionary<int, Node> _sources;
+        //private int _minPrice;
 
-        private void FindCheapestPrice(int price, int src, int dst, int k)
-        {
-            if (k < -1 || price > _minPrice) return;
+        //public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int K)
+        //{
+        //    _sources = new Dictionary<int, Node>();
+        //    _minPrice = int.MaxValue; 
 
-            if (src == dst) _minPrice = Math.Min(price, _minPrice);
-     
-            var source = _sources[src];
+        //    for (var i = 1; i <= n; i++)
+        //    {
+        //        _sources.Add(i - 1, new Node());
+        //    }
 
-            foreach (var flight in source.DestinationPrice)
-            {
-                FindCheapestPrice(price + flight.Value, flight.Key.Airport, dst, k - 1);
-            }
-        }
+        //    foreach (var flight in flights)
+        //    {
+        //        var node = _sources[flight[0]];
+        //        node.Airport = flight[0];
+        //        _sources[flight[1]].Airport = flight[1];
+        //        node.DestinationPrice.Add(_sources[flight[1]], flight[2]);
+        //    }
 
-        private class Node
-        {
-            public int Airport { get; set; }
-            public Dictionary<Node, int> DestinationPrice { get; set; } = new Dictionary<Node, int>();
-        }
+        //    FindCheapestPrice(0, src, dst, K);
+
+        //    return _minPrice == int.MaxValue ? -1 : _minPrice;
+        //}
+
+
+        //private void FindCheapestPrice(int price, int src, int dst, int k)
+        //{
+        //    if (k < -1 || price > _minPrice) return;
+
+        //    if (src == dst) _minPrice = Math.Min(price, _minPrice);
+
+        //    var source = _sources[src];
+
+        //    foreach (var flight in source.DestinationPrice)
+        //    {
+        //        FindCheapestPrice(price + flight.Value, flight.Key.Airport, dst, k - 1);
+        //    }
+        //}
+
+        //private class Node
+        //{
+        //    public int Airport { get; set; }
+        //    public Dictionary<Node, int> DestinationPrice { get; set; } = new Dictionary<Node, int>();
+        //}
     }
 }
