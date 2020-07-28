@@ -9,8 +9,8 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            _trees = new Dictionary<int, List<TreeNode>>();
             _res = new List<TreeNode>();
+            _schema = new Dictionary<string, TreeNode>();
         }
 
         [Test]
@@ -36,49 +36,61 @@ namespace Tests
 
             var actual = FindDuplicateSubtrees(root);
 
-            Assert.AreEqual(2, actual[0].val);
-            Assert.AreEqual(4, actual[1].val);
+            Assert.AreEqual(2, actual[1].val);
+            Assert.AreEqual(4, actual[0].val);
         }
 
-        private Dictionary<int, List<TreeNode>> _trees = new Dictionary<int, List<TreeNode>>();
-        private List<TreeNode> _res = new List<TreeNode>();
+
+        [Test]
+        public void Test2()
+        {
+            var root = new TreeNode(0)
+            {
+                left = new TreeNode(0)
+                {
+                    left = new TreeNode(0)
+                },
+                right = new TreeNode(0)
+                {
+                    right = new TreeNode(0)
+                    {
+                        right = new TreeNode(0)
+                    }
+                }
+            };
+
+            var actual = FindDuplicateSubtrees(root);
+
+            Assert.AreEqual(0, actual[0].val);
+            Assert.AreEqual(1, actual.Count);
+        }
+
+        public List<TreeNode> _res = new List<TreeNode>();
+        public Dictionary<string, TreeNode> _schema = new Dictionary<string, TreeNode>();
+
         public IList<TreeNode> FindDuplicateSubtrees(TreeNode root)
         {
-            if (root == null) return null;
+            if (root == null) return new List<TreeNode>();
 
-            if (_trees.ContainsKey(root.val))
-            {
-                var hasAny = false;
-                foreach (var node in _trees[root.val])
-                {
-                    hasAny = HasSameStructure(root, node);
-                    if (!hasAny) continue;
-                    _res.Add(node);
-                    break;
-                }
-                 
-                if(!hasAny)
-                {
-                    _trees[root.val].Add(root);
-                }
-            }
-            else
-            {
-                _trees.Add(root.val, new List<TreeNode>() { root });
-            }
+            Dfs(root);
 
-            FindDuplicateSubtrees(root.left);
-            FindDuplicateSubtrees(root.right);
             return _res.Distinct().ToList();
         }
 
-        public bool HasSameStructure(TreeNode node1, TreeNode node2)
+        private string Dfs(TreeNode node)
         {
-            if (node1 == null || node2 == null) return node1 == null && node2 == null;
+            if (node == null) return "null";
 
-            return node2.val == node1.val && HasSameStructure(node2.left, node1.left) && HasSameStructure(node2.right, node1.right);
+            var l = Dfs(node.left);
+            var r = Dfs(node.right);
+
+            var schema = $"{node.val} {l} {r}";
+
+            if (_schema.ContainsKey(schema)) _res.Add(_schema[schema]);
+            else _schema.Add(schema, node);
+
+            return schema;
         }
-
 
         public class TreeNode
         {
