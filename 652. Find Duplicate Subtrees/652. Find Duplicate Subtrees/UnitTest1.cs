@@ -65,8 +65,8 @@ namespace Tests
             Assert.AreEqual(1, actual.Count);
         }
 
-        public List<TreeNode> _res = new List<TreeNode>();
-        public Dictionary<string, TreeNode> _schema = new Dictionary<string, TreeNode>();
+        private List<TreeNode> _res = new List<TreeNode>();
+        private Dictionary<string, TreeNode> _schema = new Dictionary<string, TreeNode>();
 
         public IList<TreeNode> FindDuplicateSubtrees(TreeNode root)
         {
