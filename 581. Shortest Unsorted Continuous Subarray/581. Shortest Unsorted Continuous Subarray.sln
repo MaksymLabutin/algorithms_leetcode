@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "581. Shortest Unsorted Continuous Subarray", "581. Shortest Unsorted Continuous Subarray\581. Shortest Unsorted Continuous Subarray.csproj", "{1AF55E2F-0373-4E26-8C72-8CBFF0CC2118}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AF55E2F-0373-4E26-8C72-8CBFF0CC2118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF55E2F-0373-4E26-8C72-8CBFF0CC2118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF55E2F-0373-4E26-8C72-8CBFF0CC2118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF55E2F-0373-4E26-8C72-8CBFF0CC2118}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0529731E-873A-4927-8227-CBBE2583BFC1}
+	EndGlobalSection
+EndGlobal
