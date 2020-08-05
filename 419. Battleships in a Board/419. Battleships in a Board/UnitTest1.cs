@@ -7,29 +7,40 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var board = new char[][]
+            {
+                new char[] {'X', '.', '.', 'X'},
+                new char[] {'.', '.', '.', 'X'},
+                new char[] {'.', '.', '.', 'X'},
+            };
+
+            var actual = CountBattleships(board);
+
+            var expected = 2;
+
+            Assert.AreEqual(expected, actual);
         }
 
-        private int answer;
+        private int _answer;
         public int CountBattleships(char[][] board)
         {
-            answer = 0;
+            _answer = 0;
             for (var i = 0; i < board.Length; i++)
             {
                 for (var j = 0; j < board[0].Length; j++)
                 {
                     if(board[i][j] == '.') continue;
-                    answer += 1;
+                    _answer += 1;
                     Dfs(board, i, j);
                 }
             }
 
-            return answer;
+            return _answer;
         }
 
         private void Dfs(char[][] board, int i, int j)
         {
-            if (board[i][j] == '.' || i >= board.Length || i < 0 || j < 0 || j >= board[0].Length) return; 
+            if ( i >= board.Length || i < 0 || j < 0 || j >= board[0].Length || board[i][j] == '.') return; 
 
             board[i][j] = '.';
 
