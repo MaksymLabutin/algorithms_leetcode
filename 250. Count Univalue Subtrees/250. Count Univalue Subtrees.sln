@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "250. Count Univalue Subtrees", "250. Count Univalue Subtrees\250. Count Univalue Subtrees.csproj", "{C357B7A7-771D-4C67-BA56-74DA6B5BE184}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C357B7A7-771D-4C67-BA56-74DA6B5BE184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C357B7A7-771D-4C67-BA56-74DA6B5BE184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C357B7A7-771D-4C67-BA56-74DA6B5BE184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C357B7A7-771D-4C67-BA56-74DA6B5BE184}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE0172F9-5BA3-49D6-B376-6B3DA6D1C4FD}
+	EndGlobalSection
+EndGlobal
