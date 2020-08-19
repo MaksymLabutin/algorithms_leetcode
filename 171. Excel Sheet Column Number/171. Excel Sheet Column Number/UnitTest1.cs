@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 
@@ -49,12 +50,22 @@ namespace Tests
             var expected = 53;
             Assert.AreEqual(expected, actual);
         }
+
         [Test]
         public void Test7()
         {
             var s = "BBA";
             var actual = TitleToNumber(s);
             var expected = 1405;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test9()
+        {
+            var s = "BB";
+            var actual = TitleToNumber(s);
+            var expected = 54;
             Assert.AreEqual(expected, actual);
         }
 
@@ -80,14 +91,14 @@ namespace Tests
         public int TitleToNumber(string s)
         {
             if (s.Length == 1) return s[0] - 'A' + 1;
-            var res = 1;
+            var res = (s[0] - 'A' + 1) * 26;
 
-            for (int i = 0; i < s.Length - 1; i++)
+            for (int i = 1; i < s.Length - 1; i++)
             {
-                res *= (s[i] - 'A' + 1) * 26;
+                res *= (s[i] - 'A' + 1) * 26 + 1;
             }
 
-            return res + 1 + s[s.Length - 1] - 'A';
+            return  res ;
         }
     }
 }
