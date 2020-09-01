@@ -31,71 +31,67 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void Test3()
+        {
+            var n = 1;
+
+            var actual = NumSquares(n);
+
+            var expected = 1;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void Test4()
+        {
+            var n = 3;
+
+            var actual = NumSquares(n);
+
+            var expected = 3;
+
+            Assert.AreEqual(expected, actual);
+        }
+
         public int NumSquares(int n)
         {
             if (n == 0) return 0;
-            var squares = new List<Int64> { 1, 1 };
+            if (n == 1) return 1;
 
-            for (var i = 2; i < n; i++)
+            var dp = new int[n + 1];
+            for (int i = 0; i < dp.Length; i++)
+            {
+                dp[i] = int.MaxValue;
+            }
+
+            dp[0] = 0;
+
+            var squers = new List<int>();
+            for (var i = 1; i < n; i++)
             {
                 Int64 val = i * i;
 
                 if (val > n) break;
 
-                squares.Add(val);
+                squers.Add((int)val);
+            } 
+
+            for (var i = 1; i <= n; i++)
+            {
+                for (var s = 0; s < squers.Count; s++)
+                {
+                    if(i < squers[s]) break;
+                    
+                    dp[i] = Math.Min(dp[i], dp[i - squers[s]] + 1);
+                }
             }
 
-            if (squares[squares.Count - 1] == n) return 1;
-
-            var dp = new int[squares[squares.Count - 1]];
-
-
-            return 1;
+            return dp[n];
         }
 
-        //public int NumSquares(int n)
-        //{
-        //    if (n == 0) return 0;
-        //    var dp = new List<Int64> { 1, 1 };
-
-        //    for (var i = 2; i < n; i++)
-        //    {
-        //        Int64 val = i * i;
-
-        //        if (val > n) break;
-
-        //        dp.Add(val);
-        //    }
-
-        //    if (dp[dp.Count - 1] == n) return 1;
-
-        //    var answer = int.MaxValue;
-
-        //    for (var j = dp.Count - 1; j >= 0; j--)
-        //    {
-        //        var currSum = dp[j];
-        //        var currAttemps = 1;
-        //        var i = j;
-        //        while (currSum != n)
-        //        {
-        //            if (currAttemps > answer) break;
-        //            if (i < 0) i = 0;
-        //            currSum += dp[i];
-        //            if (currSum > n)
-        //            {
-        //                currSum -= dp[i];
-        //                i--;
-        //            }
-        //            else
-        //            {
-        //                currAttemps++;
-        //            }
-        //        }
-
-        //        answer = Math.Min(answer, currAttemps);
-        //    }
-
-        //    return answer;
-        //}
+       
     }
 }
