@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1496. Path Crossing", "1496. Path Crossing\1496. Path Crossing.csproj", "{8777B2D1-30AA-4CDD-8C0D-CE3BC3ABF77D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8777B2D1-30AA-4CDD-8C0D-CE3BC3ABF77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8777B2D1-30AA-4CDD-8C0D-CE3BC3ABF77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8777B2D1-30AA-4CDD-8C0D-CE3BC3ABF77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8777B2D1-30AA-4CDD-8C0D-CE3BC3ABF77D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {375454FE-9985-4C87-B6E4-67B81D944957}
+	EndGlobalSection
+EndGlobal
