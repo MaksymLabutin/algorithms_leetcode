@@ -40,13 +40,13 @@ namespace Tests
             {
                 if (s[i] == s[i + 1])
                 {
-                    var res = Find(s, i, i + 1);
+                    var res = LongestPalindrome(s, i, i + 1);
                     longest = res.end - res.start > longest.end - longest.start ? res : longest;
                 }
 
                 if (i + 2 < s.Length && s[i] == s[i + 2])
                 {
-                    var res = Find(s, i, i + 2);
+                    var res = LongestPalindrome(s, i, i + 2);
                     longest = res.end - res.start > longest.end - longest.start ? res : longest;
                 }
             }
@@ -56,9 +56,8 @@ namespace Tests
                 s.Substring(longest.start, longest.end - longest.start + 1);
         }
 
-        private (int start, int end) Find(string s, int start, int end)
-        {
-
+        private (int start, int end) LongestPalindrome(string s, int start, int end)
+        { 
             while (start >= 0 && end < s.Length && s[start] == s[end])
             {
                 start--;
