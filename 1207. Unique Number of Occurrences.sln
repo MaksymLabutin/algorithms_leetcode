@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1207. Unique Number of Occurrences", "1207. Unique Number of Occurrences\1207. Unique Number of Occurrences.csproj", "{A84F9299-41A9-4019-B8F6-99D5E1B32B97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A84F9299-41A9-4019-B8F6-99D5E1B32B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84F9299-41A9-4019-B8F6-99D5E1B32B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84F9299-41A9-4019-B8F6-99D5E1B32B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84F9299-41A9-4019-B8F6-99D5E1B32B97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9AD257A-EA01-426C-9E41-171D40F4CCDD}
+	EndGlobalSection
+EndGlobal
